@@ -1,0 +1,12 @@
+.filament-modal {
+    display: flex !important;
+    z-index: 9999 !important;
+}
+
+.filament-modal-overlay {
+    z-index: 9998 !important;
+}
+
+[style*="display: none"] .filament-modal {
+    display: none !important;
+}
