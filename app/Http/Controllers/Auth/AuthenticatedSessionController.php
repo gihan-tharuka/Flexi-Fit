@@ -18,11 +18,19 @@ class AuthenticatedSessionController extends Controller
             $user = Auth::user();
 
             // Redirect based on user role
-            if (Auth::user()->role->value == 1) { // Admin role (1)
-                return redirect()->route('admin');
-            } elseif (Auth::user()->role->value == 2) { // User role (2)
-                return redirect()->route('user');
+            // if (Auth::user()->role->value == 1) { // Admin role (1)
+            //     return redirect()->route('admin');
+            // } elseif (Auth::user()->role->value == 2) { // User role (2)
+            //     return redirect()->route('user');
+            // }
+            if (Auth::user()->role->value == 1) {
+                return redirect()->to('/admin');
+            } 
+
+            if (Auth::user()->role->value == 2) {
+                return redirect()->to('/user');
             }
+
         }
 
         // If login attempt fails
