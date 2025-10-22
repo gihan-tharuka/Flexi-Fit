@@ -18,6 +18,8 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\WorkoutLog;
 use Spatie\Sitemap\Sitemap;
 use App\Models\MembershipPayment;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request as HttpRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +123,30 @@ Route::get('/sitemap', function () {
     $sitemap->writeToFile(public_path('sitemap.xml'));
 
     return response()->file(public_path('sitemap.xml'));
+});
+
+// Temporary debug route — remove after troubleshooting
+Route::get('/__debug/request', function (HttpRequest $request) {
+    return response()->json([
+        'host' => $request->getHost(),
+        'ip' => $request->ip(),
+        'cookies' => $request->cookies->all(),
+        'headers' => [
+            'cookie' => $request->header('cookie'),
+            'x-csrf-token' => $request->header('x-csrf-token'),
+            'x-xsrf-token' => $request->header('x-xsrf-token'),
+            'referer' => $request->header('referer'),
+            'origin' => $request->header('origin'),
+        ],
+        'session' => [
+            'id' => session()->getId(),
+            'name' => config('session.cookie'),
+        ],
+        'auth' => [
+            'checked' => Auth::check(),
+            'user' => Auth::user()?->only('id','email','name') ?? null,
+        ],
+    ]);
 });
 
 Route::middleware([

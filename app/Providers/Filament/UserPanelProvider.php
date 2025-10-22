@@ -28,6 +28,8 @@ class UserPanelProvider extends PanelProvider
             ->favicon('/favicon.ico')
             ->id('user')
             ->path('user')
+            ->login() // 👈 enables Filament login page for this panel
+            ->authGuard('web') // 👈 matches Jetstream/Fortify default guard
             ->colors([
                 'primary' => Color::Red,
             ])

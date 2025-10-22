@@ -26,3 +26,18 @@ Route::get('/test', function (){
         ]),
         '_time' => time(),]);
 });
+
+// Temporary: debug endpoint to inspect cookies/headers sent to API
+Route::get('/debug-cookies', function (Request $request) {
+    return response()->json([
+        'path' => $request->path(),
+        'host' => $request->getHost(),
+        'cookies' => $request->cookies->all(),
+        'headers' => [
+            'cookie' => $request->header('cookie'),
+            'origin' => $request->header('origin'),
+            'referer' => $request->header('referer'),
+        ],
+        'session_id' => $request->getSession()?->getId(),
+    ]);
+});
