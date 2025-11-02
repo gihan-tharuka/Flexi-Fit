@@ -27,12 +27,9 @@ Flexi-Fit is a Laravel-based fitness center management system powered by Livewir
 - Scheduling & bookings (classes, trainer appointments, room/resource booking)
 - Payment management & billing (invoices, payments, refunds, gateways)
 - Trainer management (profiles, assignments, schedules)
-- Attendance tracking (check-ins, class attendance, reports)
-- Nutrition & meal-plan scaffolding (content management for diets/recipes)
 - File & media uploads (images, documents) via Spatie Media Library
 - Notifications & emails (reminders for bookings, payments, announcements)
 - Admin panel & resource CRUD powered by Filament
-- API endpoints & Sanctum support for mobile or third-party integrations
 - Reporting & analytics (revenue, membership growth, attendance trends)
 - Search and filtering for members, workouts, and schedules
 
