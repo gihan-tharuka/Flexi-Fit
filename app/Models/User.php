@@ -108,18 +108,4 @@ class User extends Authenticatable
         return $this->hasMany(MembershipPayment::class);
     }
 
-    // Filament panel access control
-    public function canAccessPanel(\Filament\Panel $panel): bool
-    {
-        if ($panel->getId() === 'admin') {
-            return $this->role?->value === 1;
-        }
-
-        if ($panel->getId() === 'user') {
-            return $this->role?->value === 2;
-        }
-
-        return false;
-    }
-
 }
