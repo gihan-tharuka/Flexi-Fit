@@ -113,5 +113,15 @@ class User extends Authenticatable
         return true; // Allow all authenticated users
     }
 
+    public function canAccessPanel(\Filament\Panel $panel): bool
+{
+    return match ($panel->getId()) {
+        'admin' => $this->role === \App\Enums\Role::ADMIN,
+        'user'  => $this->role === \App\Enums\Role::USER,
+        default => false,
+    };
+}
+
+
 
 }
