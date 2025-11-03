@@ -25,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
+        Request::setTrustedProxies(
+        [ $this->app->make('request')->getClientIp() ],
+        Request::HEADER_X_FORWARDED_ALL
+        );
+        
         Booking::observe(BookingObserver::class);
 
 
