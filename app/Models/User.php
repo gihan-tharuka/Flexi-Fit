@@ -108,4 +108,10 @@ class User extends Authenticatable
         return $this->hasMany(MembershipPayment::class);
     }
 
+    public function canAccessFilament(): bool
+    {
+        return true; // Allow all authenticated users
+    }
+
+
 }
