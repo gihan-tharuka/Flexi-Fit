@@ -32,8 +32,22 @@ use App\Models\MembershipPayment;
 
 
 //debug
+use Filament\Facades\Filament;
+
 Route::get('/test-access', function () {
-    return auth()->user()?->canAccessPanel(app(\Filament\Panel::class)) ? 'Access granted' : 'Access denied';
+    $user = auth()->user();
+
+    if (! $user) {
+        return 'Not authenticated';
+    }
+
+    $panel = Filament::getCurrentPanel();
+
+    if (! method_exists($user, 'canAccessPanel')) {
+        return 'Method canAccessPanel not found';
+    }
+
+    return $user->canAccessPanel($panel) ? 'Access granted' : 'Access denied';
 });
 
 
