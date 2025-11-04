@@ -51,6 +51,11 @@ Route::get('/test-access', function () {
 });
 
 
+Route::get('/filament-test', function () {
+    return 'Filament is reachable';
+})->middleware(['web', 'auth']);
+
+
 // Default route
 Route::get("/", [homecontroller::class, "index"])->name('home');
 
