@@ -56,6 +56,12 @@ Route::get('/filament-test', function () {
 })->middleware(['web', 'auth']);
 
 
+
+Route::get('/panel-check', function () {
+    return Filament::getPanels()->map(fn ($panel) => $panel->getPath());
+});
+
+
 // Default route
 Route::get("/", [homecontroller::class, "index"])->name('home');
 
