@@ -31,6 +31,10 @@ use App\Models\MembershipPayment;
 */
 
 
+//debug
+Route::get('/test-access', function () {
+    return auth()->user()?->canAccessPanel(app(\Filament\Panel::class)) ? 'Access granted' : 'Access denied';
+});
 
 
 // Default route
