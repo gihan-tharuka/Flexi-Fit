@@ -109,17 +109,30 @@ class User extends Authenticatable
     }
 
     // Filament panel access control
-    public function canAccessPanel(\Filament\Panel $panel): bool
+//    public function canAccessPanel(\Filament\Panel $panel): bool
+//    {
+//        if ($panel->getId() === 'admin') {
+//            return $this->role?->value === 1;
+//        }
+//
+//        if ($panel->getId() === 'user') {
+//            return $this->role?->value === 2;
+//        }
+//
+//        return false;
+//    }
+
+    public function canAccessPanel(Panel $panel): bool
     {
-        if ($panel->getId() === 'admin') {
-            return $this->role?->value === 1;
-        }
+        // Example: allow all verified users
+        return $this->hasVerifiedEmail();
 
-        if ($panel->getId() === 'user') {
-            return $this->role?->value === 2;
-        }
+        // Or allow all users regardless of email verification
+        // return true;
 
-        return false;
+        // Or restrict by email domain
+        // return str_ends_with($this->email, '@yourdomain.com');
     }
+
 
 }
