@@ -125,10 +125,10 @@ class User extends Authenticatable
     public function canAccessPanel(Panel $panel): bool
     {
         // Example: allow all verified users
-        return $this->hasVerifiedEmail();
+//        return $this->hasVerifiedEmail();
 
         // Or allow all users regardless of email verification
-        // return true;
+         return true;
 
         // Or restrict by email domain
         // return str_ends_with($this->email, '@yourdomain.com');
