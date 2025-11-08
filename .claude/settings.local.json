@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(git tag:*)",
+      "Bash(composer update:*)",
+      "Bash(composer show:*)",
+      "Bash(composer remove:*)",
+      "Bash(php artisan vendor:publish:*)",
+      "Bash(php artisan:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

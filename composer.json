@@ -8,23 +8,19 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "alperenersoy/filament-export": "^3.0",
+        "php": "^8.2|^8.3",
         "artesaos/seotools": "^1.3",
         "blade-ui-kit/blade-heroicons": "^2.5",
         "fakerphp/faker": "^1.24",
-        "filament/filament": "^3.2",
-        "filament/notifications": "3.2",
-        "filament/spatie-laravel-media-library-plugin": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
         "ladumor/laravel-pwa": "^0.0.4",
-        "laravel/framework": "^10.10",
-        "laravel/jetstream": "^4.1",
-        "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8",
-        "livewire/livewire": "3.5.12",
+        "laravel/framework": "^11.0",
+        "laravel/jetstream": "^5.0",
+        "laravel/sanctum": "^4.0",
+        "laravel/tinker": "^2.10",
+        "livewire/livewire": "^3.5.17",
         "mckenziearts/laravel-notify": "^2.5",
-        "mindscms/laravelshoppingcart": "^2.1",
+        "hardevine/shoppingcart": "^3.1",
         "minishlink/web-push": "^9.0",
         "morilog/jalali": "^3.4",
         "notifylk/notify-php": "*@dev",
@@ -33,13 +29,13 @@
     },
     "require-dev": {
         "fly-apps/dockerfile-laravel": "^1.0",
-        "laravel/pint": "^1.0",
-        "laravel/sail": "^1.18",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^7.0",
-        "pestphp/pest": "^2.34",
-        "phpunit/phpunit": "^10.5",
-        "spatie/laravel-ignition": "^2.0"
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.26",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.0",
+        "pestphp/pest": "^3.0",
+        "phpunit/phpunit": "^11.0",
+        "spatie/laravel-ignition": "^2.4"
     },
     "autoload": {
         "psr-4": {
@@ -61,8 +57,7 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan filament:upgrade"
+            "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

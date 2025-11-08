@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,16 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+/*
+|--------------------------------------------------------------------------
+| Scheduled Commands
+|--------------------------------------------------------------------------
+|
+| Here you may define all of your scheduled commands. These commands
+| will be executed according to their defined schedule.
+|
+*/
+
+Schedule::command('notify:expired-subscriptions')->daily();
+Schedule::command('membership:expire')->everyMinute();
