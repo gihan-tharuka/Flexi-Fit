@@ -9,7 +9,8 @@
       "Bash(php artisan vendor:publish:*)",
       "Bash(php artisan:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(tee:*)"
     ],
     "deny": [],
     "ask": []
