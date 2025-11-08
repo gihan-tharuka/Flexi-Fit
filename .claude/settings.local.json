@@ -5,7 +5,9 @@
       "Bash(composer update:*)",
       "Bash(php artisan config:clear:*)",
       "Bash(php artisan cache:clear:*)",
-      "Bash(php artisan view:clear:*)"
+      "Bash(php artisan view:clear:*)",
+      "Bash(php:*)",
+      "Bash(composer show:*)"
     ],
     "deny": [],
     "ask": []
