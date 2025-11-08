@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Booking;
 use App\Models\MembershipPlan;
 use App\Observers\Bookingobserver;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Livewire\Livewire;
@@ -27,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Booking::observe(BookingObserver::class);
 
-
+        View::composer('auth.register', function ($view) {
+            $view->with('membershipPlans', MembershipPlan::all());
+        });
     }
 }

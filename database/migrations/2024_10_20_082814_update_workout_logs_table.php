@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('workout_logs', function (Blueprint $table) {
             // Drop foreign key and the old workout_id column
-            $table->dropForeign(['workout_id']);
+            // $table->dropForeign(['workout_id']);
             $table->dropColumn('workout_id');
 
             // Add a new column to track the workout date
