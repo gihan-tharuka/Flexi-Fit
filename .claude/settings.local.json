@@ -8,7 +8,8 @@
       "Bash(composer remove:*)",
       "Bash(php artisan vendor:publish:*)",
       "Bash(php artisan:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
