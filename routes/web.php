@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Navigationcontroller;
 use App\Http\Controllers\OrderController;
 use App\Models\Schedule;
@@ -35,6 +36,7 @@ use App\Models\MembershipPayment;
 
 // Default route
 Route::get("/", [homecontroller::class, "index"])->name('home');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
 // Booking from the home page
@@ -147,6 +149,3 @@ Route::get('/order-receipt/{id}', function ($id) {
 
 //route for resources\views\pages\product-details.blade.php
 Route::get('/product-details/{id}',[OrderController::class, 'Order_details'] );
-
-
-

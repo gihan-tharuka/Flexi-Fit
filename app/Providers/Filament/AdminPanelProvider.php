@@ -26,7 +26,6 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
             ->brandName('Flexi-Fit Dashboard')
             ->colors([
                 'primary' => Color::Blue,
