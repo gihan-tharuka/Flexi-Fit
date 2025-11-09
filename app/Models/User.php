@@ -13,8 +13,10 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Enums\Role;
 use App\Models\Order;
 use App\Models\Subscription;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens;
     use HasFactory;
@@ -106,6 +108,19 @@ class User extends Authenticatable
     public function membershipPayments()
     {
         return $this->hasMany(MembershipPayment::class);
+    }
+
+    /**
+     * Determine if the user can access the Filament panel
+     * All authenticated users can access the panel
+     * Role-based visibility is handled by individual resources
+     */
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Allow all authenticated users to access the panel
+        // Admin users will see admin resources
+        // Customer/Supplier users will see "My Account" pages
+        return true;
     }
 
 }

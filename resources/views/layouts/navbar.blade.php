@@ -73,42 +73,42 @@
                     class="flex flex-col font-medium p-12 md:p-0 mt-4 dark:bg-[#171717] rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-[#141414] dark:bg-bg-[#141414] md:dark:bg-[#141414] dark:border-gray-700">
                     <li>
                         <a aria-current="page"
-                            class="block py-2 text-lg px-3 text-white rounded md:bg-transparent md:p-0 
+                            class="block py-2 text-lg px-3 text-white rounded md:bg-transparent md:p-0
                             {{ Request::is('/') ? 'text-[#F41E1E]' : 'text-white' }}"
                             href="{{ url('/') }}">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0 
+                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0
                             {{ Request::is('products') ? 'text-[#F41E1E]' : 'text-white' }}"
                             href="{{ url('/products') }}">
                             Products
                         </a>
                     </li>
                     <li>
-                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0 
+                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0
                             {{ Request::is('our_services') ? 'text-[#F41E1E]' : 'text-white' }}"
                             href="/our_services">
                             Services
                         </a>
                     </li>
                     <li>
-                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0 
+                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0
                             {{ Route::is('pricing') ? 'text-[#F41E1E]' : 'text-white' }}"
                             href="{{ route('pricing') }}">
                             Pricing
                         </a>
                     </li>
                     <li>
-                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0 
+                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0
                             {{ Route::is('bmi') ? 'text-[#F41E1E]' : 'text-white' }}"
                             href="{{ route('bmi') }}">
                             BMI
                         </a>
                     </li>
                     <li>
-                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0 
+                        <a class="block py-2 px-3 text-lg rounded hover:bg-gray-700 md:hover:bg-transparent md:p-0
                             {{ Route::is('contact') ? 'text-[#F41E1E]' : 'text-white' }}"
                             href="{{ route('contact') }}">
                             Contact
@@ -132,17 +132,22 @@
                     <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{ auth()->user()->email }}</span>
                 </div>
                 <ul aria-labelledby="user-menu-button" class="py-2">
-                    @if (auth()->user()->role->value === 1)
-                        <li>
-                            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  dark:hover:text-white"
-                                href="/admin">Dashboard</a>
-                        </li>
-                    @else
-                        <li>
-                            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  dark:hover:text-white"
-                                href="/user">Dashboard</a>
-                        </li>
-                    @endif
+{{--                    @if (auth()->user()->role->value === 1)--}}
+{{--                        <li>--}}
+{{--                            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  dark:hover:text-white"--}}
+{{--                                href="/admin">Dashboard</a>--}}
+{{--                        </li>--}}
+{{--                    @else--}}
+{{--                        <li>--}}
+{{--                            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  dark:hover:text-white"--}}
+{{--                                href="/user">Dashboard</a>--}}
+{{--                        </li>--}}
+{{--                    @endif--}}
+
+                    <li>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  dark:hover:text-white"
+                           href="/dashboard">Dashboard</a>
+                    </li>
 
                     <li>
                         <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600  dark:hover:text-white"

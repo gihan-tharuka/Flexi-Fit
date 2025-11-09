@@ -36,7 +36,7 @@ use App\Models\MembershipPayment;
 
 // Default route
 Route::get("/", [homecontroller::class, "index"])->name('home');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
 
 // Booking from the home page
