@@ -83,9 +83,15 @@
                                         {{ __('Profile') }}
                                     </x-dropdown-link>
 
-                                    <x-dropdown-link href="{{ url('/dashboard') }}">
-                                        {{ __('Dashboard') }}
-                                    </x-dropdown-link>
+                                    @if (auth()->user()->role->value === 1)
+                                        <x-dropdown-link href="/admin">
+                                            {{ __('Dashboard') }}
+                                        </x-dropdown-link>
+                                    @else
+                                        <x-dropdown-link href="/user">
+                                            {{ __('Dashboard') }}
+                                        </x-dropdown-link>
+                                    @endif
                                     
                                     <div class="border-t border-gray-200"></div>
 

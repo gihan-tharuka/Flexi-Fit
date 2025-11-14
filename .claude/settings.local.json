@@ -11,7 +11,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(tee:*)",
-      "Bash(composer install:*)"
+      "Bash(composer install:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []

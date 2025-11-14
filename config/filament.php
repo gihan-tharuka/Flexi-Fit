@@ -31,11 +31,11 @@ return [
     ],
 
         'admin' => [
-            'path' => '/admin',
+            'path' => '/dashboard',
             'middleware' => ['auth', 'role:admin'],
         ],
         'user' => [
-            'path' => '/user',
+            'path' => '/dashboard',
             'middleware' => ['auth', 'role:customer'],
         ],
 

@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Auth\Login;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -26,6 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('dashboard')
             ->brandName('Flexi-Fit Dashboard')
+            ->login(Login::class)
             ->colors([
                 'primary' => Color::Blue,
             ])
@@ -50,9 +52,8 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                'auth:web',
+                \Filament\Http\Middleware\Authenticate::class,
             ])
-            ->authGuard('web')
             ->databaseNotifications()
             ->sidebarCollapsibleOnDesktop();
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('workout_logs', function (Blueprint $table) {
             // Drop foreign key and the old workout_id column
             // Laravel auto-generates foreign key name as: {table}_{column}_foreign
-            $table->dropForeign('workout_logs_workout_id_foreign');
+            $table->dropForeign(['workout_id']);
             $table->dropColumn('workout_id');
 
             // Add a new column to track the workout date
