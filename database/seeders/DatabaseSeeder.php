@@ -16,13 +16,6 @@ class DatabaseSeeder extends Seeder
     {
 
 
-        \App\Models\User::factory()->create([
-            'name' => 'admin',
-            'email' => 'Admin@admin.com',
-            'password' => bcrypt('admin'),
-            'role' => 1,
-        ]);
-
         $this -> call([
             MembershipPlanSeeder::class,
         ]);
