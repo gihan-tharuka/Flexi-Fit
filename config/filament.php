@@ -36,7 +36,7 @@ return [
         ],
         'user' => [
             'path' => '/user',
-            'middleware' => ['auth', 'role:user'],  // ensure this is assigned to users
+            'middleware' => ['auth', 'role:customer'],  // ensure this is assigned to users
         ],
 
     'panel' => [
